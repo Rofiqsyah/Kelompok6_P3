@@ -1,10 +1,9 @@
-# 🌟 UAS Kelompok 6 🌟
+# 🌟 Kelompok 6 Konter hp Teco Cell 🌟
 
 ## 📂 Daftar Isi Folder
-- **Dokumen UAS** 📄
-  - 📘 Dokumentasi Awal Proyek Pengembangan Basis Data Konter hp Teco cell.pdf
-  - 📙 Fitur Database[1].pdf
-  - 📗 LAPORAN TUGAS UAS kelompok 6.pdf
+- **Dokumen Konter Hp Teco Cell** 📄
+  - 📘 Dokumentasi Awal Proyek Konter hp Teco cell.pdf
+  - 📙 Fitur Pemrograman[1].pdf
   - 📕 MANUAL PENGGUNAAN SISTEM MANAJEMEN.pdf
 - **Folder Basic** 📁
   - 🔧 Codingan composer
@@ -12,7 +11,6 @@
 ---
 
 ## Tech Stack
-![Database](https://img.shields.io/badge/database-MySQL-green) ![Framework](https://img.shields.io/badge/framework-Yii2-blue) ![Language](https://img.shields.io/badge/language-PHP-blue) ![Environment](https://img.shields.io/badge/environment-XAMPP-orange) ![Dependencies](https://img.shields.io/badge/dependencies-Composer-yellow)
 
 ---
 
@@ -20,8 +18,7 @@
 For detailed documentation, refer to the files linked below (written in Indonesian):
 
 - 📘 [Dokumen Awal Proyek](#)
-- 📙 [Fitur Basis Data](#)
-- 📗 [Laporan Tugas UAS](#)
+- 📙 [FiturPemrograman](#)
 - 📕 [Manual Penggunaan Sistem](#)
 
 ---
@@ -35,11 +32,7 @@ For detailed documentation, refer to the files linked below (written in Indonesi
 ---
 
 ## 📝 Deskripsi
-This repository is the collaborative work of **Kelompok 2** for the **UAS Project**. It includes:
-- 📌 Initial project documentation.
-- 📌 Database features.
-- 📌 Group project report.
-- 📌 System usage manual.
+Dokumen ini menjelaskan tentang konter hp tecco cell.Pembuatan fitur fitur 
 
 We hope this repository provides a clear understanding of our project. 😊
 
