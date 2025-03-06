@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katalog Toko HP</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        .product {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .product-item {
+            background: white;
+            width: 30%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .product-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .product-item h2 {
+            font-size: 1.2em;
+        }
+        .product-item p {
+            color: #555;
+        }
+        .price {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #e67e22;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Katalog Toko HP</h1>
+        <div class="product">
+            <div class="product-item">
+                <img src="https://via.placeholder.com/150" alt="HP 1">
+                <h2>Samsung Galaxy S23</h2>
+                <p>RAM 8GB, Storage 128GB</p>
+                <p class="price">Rp 12.000.000</p>
+            </div>
+            <div class="product-item">
+                <img src="https://via.placeholder.com/150" alt="HP 2">
+                <h2>iPhone 14 Pro</h2>
+                <p>RAM 6GB, Storage 256GB</p>
+                <p class="price">Rp 18.000.000</p>
+            </div>
+            <div class="product-item">
+                <img src="https://via.placeholder.com/150" alt="HP 3">
+                <h2>Xiaomi Redmi Note 12</h2>
+                <p>RAM 6GB, Storage 128GB</p>
+                <p class="price">Rp 3.500.000</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
