@@ -1,10 +1,8 @@
-# 🌟 UAS Kelompok 6 🌟
+# 🌟 Kelompok 6 Konter Hp Teco Cell 🌟
 
 ## 📂 Daftar Isi Folder
-- **Dokumen UAS** 📄
-  - 📘 Dokumentasi Awal Proyek Pengembangan Basis Data Konter hp Teco cell.pdf
-  - 📙 Fitur Database[1].pdf
-  - 📗 LAPORAN TUGAS UAS kelompok 6.pdf
+- **Dokumen Konter Hp Teco Cell** 📄
+  - 📘 Dokumentasi Awal Proyek Konter hp Teco cell.pdf
   - 📕 MANUAL PENGGUNAAN SISTEM MANAJEMEN.pdf
 - **Folder Basic** 📁
   - 🔧 Codingan composer
@@ -20,8 +18,6 @@
 For detailed documentation, refer to the files linked below (written in Indonesian):
 
 - 📘 [Dokumen Awal Proyek](#)
-- 📙 [Fitur Basis Data](#)
-- 📗 [Laporan Tugas UAS](#)
 - 📕 [Manual Penggunaan Sistem](#)
 
 ---
@@ -35,11 +31,8 @@ For detailed documentation, refer to the files linked below (written in Indonesi
 ---
 
 ## 📝 Deskripsi
-This repository is the collaborative work of **Kelompok 6** for the **UAS Project**. It includes:
-- 📌 Initial project documentation.
-- 📌 Database features.
-- 📌 Group project report.
-- 📌 System usage manual.
+This repository is the collaborative work of **Kelompok 6** for the **Project Konter Hp Teco Cell**. It includes:
+Pada Proyek ini konter hp teco cell melakukan penambahan fitur Pelanggan,Penjualan,Produk,Transaksi,Laporan penjualan
 
 We hope this repository provides a clear understanding of our project. 😊
 
