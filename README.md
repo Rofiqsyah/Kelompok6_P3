@@ -3,7 +3,6 @@
 ## 📂 Daftar Isi Folder
 - **Dokumen Konter Hp Teco Cell** 📄
   - 📘 Dokumentasi Awal Proyek Konter hp Teco cell.pdf
-  - 📕 MANUAL PENGGUNAAN SISTEM MANAJEMEN.pdf
 - **Folder Basic** 📁
   - 🔧 Codingan composer
 
