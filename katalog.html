@@ -3,80 +3,194 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Katalog Toko HP</title>
+    <title>Katalog Teco Cell</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
-            padding: 20px;
-            background-color: #f4f4f4;
+            padding: 0;
+            background-color: #000000;
         }
         .container {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: auto;
-            background: white;
             padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            text-align: center;
-        }
-        .product {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-        .product-item {
             background: white;
-            width: 30%;
-            padding: 10px;
+            border-radius: 10px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background: rgba(0, 0, 0, 0);
+            color: black;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: 700;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Tambahkan bayangan */
+        }
+        .menu {
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .slider {
+            position: relative;
+            width: 100%;
+            max-width: 4816px;
+            height: 529px;
+            overflow: hidden;
+            margin: auto;
+        }
+        .slides {
+            display: flex;
+            width: 300%;
+            height: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+        .slide {
+            width: 100%;
+            height: 100%;
+            flex-shrink: 0;
+        }
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .hot-promo {
+            text-align: center;
+            padding: 20px;
+        }
+        .hot-promo h2 {
+            font-size: 22px;
+            font-weight: 600;
+        }
+        .tabs {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
             margin-bottom: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .tab {
+            padding: 10px 15px;
+            border: 1px solid #ccc;
+            cursor: pointer;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+        .tab:hover, .tab.active {
+            background: rgb(255, 255, 255);
+            color: rgb(0, 0, 0);
+        }
+        .latest-phones {
+            padding: 20px;
             text-align: center;
         }
-        .product-item img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 5px;
+        .latest-phones h2 {
+            font-size: 22px;
+            font-weight: 600;
         }
-        .product-item h2 {
-            font-size: 1.2em;
+        .phone-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            padding: 10px;
         }
-        .product-item p {
-            color: #555;
+        .phone-card {
+            background: white;
+            padding: 10px;
+            border: 1px solid #ccc; /* Membuat pojok siku */
+            text-align: center;
+            transition: transform 0.2s ease-in-out;
         }
-        .price {
-            font-size: 1.2em;
-            font-weight: bold;
-            color: #e67e22;
+        .phone-card:hover {
+            transform: scale(1.05);
+        }
+        .phone-card img {
+            width: 100%;
+        }
+        .phone-card p {
+            font-size: 16px;
+            font-weight: 500;
+            color: #444;
+        }
+        .footer {
+            text-align: center;
+            padding: 15px;
+            background: #222;
+            color: #f4bc04;
+            margin-top: 20px;
+        }
+        @media (max-width: 768px) {
+            .phone-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .slider {
+                height: 25vh;
+            }
         }
     </style>
 </head>
 <body>
+    <div class="header">
+        <h1>Teco Cell</h1>
+        <div class="menu"><i class="fas fa-bars"></i></div>
+    </div>
+    
     <div class="container">
-        <h1>Katalog Toko HP</h1>
-        <div class="product">
-            <div class="product-item">
-                <img src="https://via.placeholder.com/150" alt="HP 1">
-                <h2>Samsung Galaxy S23</h2>
-                <p>RAM 8GB, Storage 128GB</p>
-                <p class="price">Rp 12.000.000</p>
+        <div class="slider">
+            <div class="slides" id="slideContainer">
+                <div class="slide"><img src="banner panjang (1).png" alt="Promo 1"></div>
+                <div class="slide"><img src="banner panjang(2).png" alt="Promo 2"></div>
+                <div class="slide"><img src="https://via.placeholder.com/800x300" alt="Promo 3"></div>
             </div>
-            <div class="product-item">
-                <img src="https://via.placeholder.com/150" alt="HP 2">
-                <h2>iPhone 14 Pro</h2>
-                <p>RAM 6GB, Storage 256GB</p>
-                <p class="price">Rp 18.000.000</p>
+        </div>
+        
+        <div class="hot-promo">
+            <h2>Hot Promo</h2>
+            <div class="tabs">
+                <div class="tab active">Aksesoris</div>
+                <div class="tab">Gadget</div>
+                <div class="tab">Paket Data</div>
             </div>
-            <div class="product-item">
-                <img src="https://via.placeholder.com/150" alt="HP 3">
-                <h2>Xiaomi Redmi Note 12</h2>
-                <p>RAM 6GB, Storage 128GB</p>
-                <p class="price">Rp 3.500.000</p>
+        </div>
+        
+        <div class="latest-phones">
+            <h2>HP Terbaru</h2>
+            <div class="phone-grid">
+                <div class="phone-card"><img src="Samsung galaxy 14 5g.webp" alt="HP 1"><p>Samsung Galaxy A14 5G</p></div>
+                <div class="phone-card"><img src="Samsung galaxy a15.webp" alt="HP 2"><p>Samsung Galaxy S15</p></div>
+                <div class="phone-card"><img src="samsung galxy a16 5g.webp" alt="HP 3"><p>Samsung Galaxy A16 5G</p></div>
+                <div class="phone-card"><img src="samsung galxy s25.webp" alt="HP 4"><p>Samsung Galaxy s25</p></div>
+                <div class="phone-card"><img src="14 ibox.webp" alt="HP 5"><p>IPhone 14 Ibox</p></div>
+                <div class="phone-card"><img src="ip 15 pro ibox.webp" alt="HP 6"><p>Iphone 15 Pro Max Ibox</p></div>
+                <div class="phone-card"><img src="ip 16 inter.jpg" alt="HP 7"><p>Iphone 16 Inter</p></div>
+                <div class="phone-card"><img src="google pixel 6.jpg" alt="HP 8"><p>Google Pixel 6</p></div>
             </div>
         </div>
     </div>
+    <div class="footer">
+    </div>
+    <div class="footer">
+        © 2025 Teco Cell. All rights reserved.
+    </div>
+
+    <script>
+        let index = 0;
+        function showSlide(i) {
+            const slides = document.getElementById('slideContainer');
+            const totalSlides = slides.children.length;
+            index = (i + totalSlides) % totalSlides;
+            slides.style.transform = `translateX(${-index * 100}%)`;
+        }
+        function nextSlide() { showSlide(index + 1); }
+        setInterval(nextSlide, 3000);
+    </script>
 </body>
 </html>
