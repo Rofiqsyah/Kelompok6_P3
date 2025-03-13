@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Teco Cell</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #E5D0AC;
+            display: flex;
+        }
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            background-color: #C14600;
+            color: white;
+            padding: 20px;
+            position: fixed;
+        }
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            padding: 15px;
+            margin: 10px 0;
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.2);
+            text-align: center;
+            border-radius: 5px;
+        }
+        .container {
+            margin-left: 270px;
+            padding: 20px;
+            width: 80%;
+        }
+        .box {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .info {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .card img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .promo {
+            margin-top: 30px;
+            padding: 20px;
+            background: #FFF3E0;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .promo h4 {
+            color: #C14600;
+        }
+        .promo ul {
+            list-style: none;
+            padding: 0;
+        }
+        .promo ul li {
+            padding: 10px;
+            background: #FF9D23;
+            color: white;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+        .address {
+            margin-top: 20px;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Teco Cell</h2>
+        <ul>
+            <li>Menu Utama</li>
+            <li>Katalog Produk</li>
+            <li>Transaksi</li>
+            <li>Riwayat Transaksi</li>
+            <li>Pembelian</li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <div class="box">
+            <div class="info">
+                <div class="card">
+                    <img src="TokokonterTecoCell.png" alt="Promo Special">
+                </div>
+                <div class="card">
+                    <img src="promo special.jpg" alt="Gunakan promo yang ada">
+                </div>
+                <div class="card">
+                    <img src="promo.png" alt="Nikmati dengan hp terbaru anda">
+                </div>
+            </div>
+        </div>
+        
+        <div class="promo">
+            <h4>Promo Spesial</h4>
+            <ul>
+                <li>Paket Internet 10GB - Rp 50.000</li>
+                <li>Pulsa All Operator Diskon 5%</li>
+                <li>Paket Combo Unlimited - Rp 75.000</li>
+            </ul>
+        </div>
+
+        <div class="address">
+            <h4>Alamat Toko</h4>
+            <p>Jalan Raya Dalopo No. 147 Krajan, Kabupaten Madiun, Jawa Timur 63174</p>
+        </div>
+    </div>
+</body>
+</html>
