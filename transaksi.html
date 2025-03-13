@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaksi - Teco Cell</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #E5D0AC;
+            color: #333;
+        }
+        .container {
+            width: 50%;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+        }
+        label {
+            font-weight: bold;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #999;
+        }
+        button {
+            background-color: #C14600;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #FF9D23;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Transaksi - Teco Cell</h2>
+        <form>
+            <label for="nama">Nama Pembeli:</label>
+            <input type="text" id="nama" name="nama" required>
+            
+            <label for="produk">Produk yang Dibeli:</label>
+            <input type="text" id="produk" name="produk" required>
+            
+            <label for="jumlah">Jumlah:</label>
+            <input type="number" id="jumlah" name="jumlah" required>
+            
+            <label for="pembayaran">Metode Pembayaran:</label>
+            <select id="pembayaran" name="pembayaran" required>
+                <option value="bca">BCA</option>
+                <option value="bri">BRI</option>
+                <option value="mandiri">QRIS</option>
+                <option value="indomaret">Indomaret</option>
+                <option value="alfamart">Alfamart</option>
+            </select>
+            
+            <label for="pengiriman">Jasa Pengiriman:</label>
+            <select id="pengiriman" name="pengiriman" required>
+                <option value="jne">JNE</option>
+                <option value="jnt">J&T</option>
+                <option value="grab">Grab</option>
+                <option value="gojek">Gojek</option>
+            </select>
+            
+            <button type="submit">Proses Transaksi</button>
+        </form>
+    </div>
+</body>
+</html>
