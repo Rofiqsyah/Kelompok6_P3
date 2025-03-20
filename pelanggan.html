@@ -3,83 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Halaman Pelanggan</title>
+    <title>Daftar Pelanggan</title>
     <style>
         body {
+            background-color: #3674B5;
+            color: white;
             font-family: Arial, sans-serif;
-            background-color: #FEF9E1;
-            color: #C14600;
             margin: 0;
             padding: 0;
         }
-        header {
-            background-color: #C14600;
-            color: white;
+        h1 {
             text-align: center;
+            background-color: #3674B5;
             padding: 15px;
-            font-size: 24px;
+            color: white;
+            margin: 0;
         }
         .container {
             width: 80%;
             margin: 20px auto;
-            background: #E5D0AC;
+            background-color: white;
             padding: 20px;
             border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            color: black;
         }
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 20px;
-        }
-        table, th, td {
-            border: 1px solid #C14600;
+            margin-top: 10px;
+            background-color: white;
         }
         th, td {
             padding: 10px;
+            border: 1px solid #3674B5;
             text-align: left;
         }
         th {
-            background: #FF9D23;
+            background-color: #3674B5;
             color: white;
+        }
+        .form-container {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #3674B5;
+            border-radius: 5px;
+            color: white;
+        }
+        input, button {
+            padding: 10px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        input {
+            width: calc(25% - 15px);
         }
         button {
-            background: #C14600;
+            background-color: #3674B5;
             color: white;
-            border: none;
-            padding: 10px;
             cursor: pointer;
-            border-radius: 5px;
         }
         button:hover {
-            background: #FF9D23;
+            background-color: #3674B5;
         }
     </style>
 </head>
 <body>
-    <header>Daftar Pelanggan</header>
+    <h1>Daftar Pelanggan</h1>
     <div class="container">
+        <div class="form-container">
+            <input type="text" id="nama" placeholder="Nama Pelanggan">
+            <input type="email" id="email" placeholder="Email">
+            <input type="tel" id="telepon" placeholder="No. Telepon">
+            <button onclick="tambahPelanggan()">Tambah Pelanggan</button>
+        </div>
+
         <table>
-            <tr>
-                <th>Nama</th>
-                <th>Email</th>
-                <th>Telepon</th>
-            </tr>
-            <tr>
-                <td>Andi Saputra</td>
-                <td>andi@email.com</td>
-                <td>08123456789</td>
-            </tr>
-            <tr>
-                <td>Rina Wijaya</td>
-                <td>rina@email.com</td>
-                <td>08987654321</td>
-            </tr>
-            <tr>
-                <td>Budi Santoso</td>
-                <td>budi@email.com</td>
-                <td>08567891234</td>
-            </tr>
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Nama</th>
+                    <th>Email</th>
+                    <th>No. Telepon</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody id="tabel-pelanggan"></tbody>
         </table>
     </div>
+
+    <script>
+        let pelanggan = [];
+
+        function renderTabel() {
+            let tabel = document.getElementById("tabel-pelanggan");
+            tabel.innerHTML = "";
+            pelanggan.forEach((p, index) => {
+                let row = tabel.insertRow();
+                row.innerHTML = `
+                    <td>${index + 1}</td>
+                    <td>${p.nama}</td>
+                    <td>${p.email}</td>
+                    <td>${p.telepon}</td>
+                    <td>
+                        <button onclick="editPelanggan(${index})">Edit</button>
+                        <button onclick="hapusPelanggan(${index})">Hapus</button>
+                    </td>
+                `;
+            });
+        }
+
+        function tambahPelanggan() {
+            let nama = document.getElementById("nama").value;
+            let email = document.getElementById("email").value;
+            let telepon = document.getElementById("telepon").value;
+
+            if (nama === "" || email === "" || telepon === "") {
+                alert("Harap isi semua data pelanggan!");
+                return;
+            }
+
+            pelanggan.push({ nama, email, telepon });
+            renderTabel();
+
+            document.getElementById("nama").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("telepon").value = "";
+        }
+
+        function editPelanggan(index) {
+            let p = pelanggan[index];
+            let namaBaru = prompt("Edit Nama:", p.nama);
+            let emailBaru = prompt("Edit Email:", p.email);
+            let teleponBaru = prompt("Edit Telepon:", p.telepon);
+
+            if (namaBaru && emailBaru && teleponBaru) {
+                pelanggan[index] = { nama: namaBaru, email: emailBaru, telepon: teleponBaru };
+                renderTabel();
+            }
+        }
+
+        function hapusPelanggan(index) {
+            if (confirm("Apakah Anda yakin ingin menghapus pelanggan ini?")) {
+                pelanggan.splice(index, 1);
+                renderTabel();
+            }
+        }
+    </script>
 </body>
 </html>

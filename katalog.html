@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katalog Teco Cell</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #3674B5, #5A9BD5, #D1E3F5);
+            color: black;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background: #3674B5;
+            color: white;
+            border-radius: 10px;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: 700;
+        }
+        .tabs {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .tab {
+            padding: 10px 15px;
+            background: #5A9BD5;
+            border: 1px solid #3674B5;
+            cursor: pointer;
+            font-weight: 500;
+            transition: 0.3s;
+            color: black;
+            border-radius: 10px;
+        }
+        .tab:hover, .tab.active {
+            background: #3674B5;
+            color: white;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            padding: 10px;
+        }
+        .card {
+            background: white;
+            padding: 10px;
+            border: 1px solid #3674B5;
+            text-align: center;
+            transition: transform 0.2s ease-in-out;
+            border-radius: 10px;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card img {
+            width: 100px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        .footer {
+            text-align: center;
+            padding: 15px;
+            background: #3674B5;
+            color: white;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+    <script>
+        function showCategory(category) {
+            document.querySelectorAll('.grid').forEach(grid => grid.style.display = 'none');
+            document.getElementById(category).style.display = 'grid';
+            document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+            document.querySelector(`[data-category="${category}"]`).classList.add('active');
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        <h1>Teco Cell</h1>
+    </div>
+    
+    <div class="container">
+        <div class="tabs">
+            <div class="tab active" data-category="pulsa" onclick="showCategory('pulsa')">Pulsa</div>
+            <div class="tab" data-category="aksesoris" onclick="showCategory('aksesoris')">Aksesoris</div>
+            <div class="tab" data-category="hp" onclick="showCategory('hp')">HP</div>
+        </div>
+        
+        <div id="pulsa" class="grid">
+            <div class="card"><img src="img/telkom.png.jpg" alt="Pulsa Telkomsel"><p>Pulsa Telkomsel</p><p>Nominal: 5rb - 100rb</p><p>Mulai Rp 5.000</p></div>
+            <div class="card"><img src="img/indosat.png.jpg" alt="Pulsa Indosat"><p>Pulsa Indosat</p><p>Nominal: 5rb - 100rb</p><p>Mulai Rp 5.000</p></div>
+            <div class="card"><img src="img/xl.png.jpg" alt="Pulsa XL"><p>Pulsa XL</p><p>Nominal: 5rb - 100rb</p><p>Mulai Rp 5.000</p></div>
+            <div class="card"><img src="img/smat.png.jpg" alt="Pulsa Smartfren"><p>Pulsa Smartfren</p><p>Nominal: 5rb - 100rb</p><p>Mulai Rp 5.000</p></div>
+        </div>
+        
+        <div id="aksesoris" class="grid" style="display: none;">
+            <div class="card"><img src="img/charger.png.jpg" alt="Charger Original"><p>Charger Original</p><p>Fast Charging 25W</p><p>Rp 150.000</p></div>
+            <div class="card"><img src="img/heandshet.png.jpg" alt="Headset Bluetooth"><p>Headset Bluetooth</p><p>Noise Cancelling</p><p>Rp 250.000</p></div>
+            <div class="card"><img src="img/powerbank.png.jpg" alt="Powerbank 10.000mAh"><p>Powerbank 10.000mAh</p><p>Fast Charging</p><p>Rp 300.000</p></div>
+            <div class="card"><img src="img/casing.png.jpg" alt="Case HP"><p>Case HP</p><p>Berbagai Model</p><p>Rp 50.000</p></div>
+        </div>
+
+        <div id="hp" class="grid" style="display: none;">
+            <div class="card"><img src="img/Samsung galaxy 14 5g.webp" alt="Samsung Galaxy A14 5G"><p>Samsung Galaxy A14 5G</p><p>RAM 6GB, ROM 128GB, Kamera 50MP</p><p>Rp 3.499.000</p></div>
+            <div class="card"><img src="img/Samsung galaxy a15.webp" alt="Samsung Galaxy A15"><p>Samsung Galaxy A15</p><p>RAM 8GB, ROM 128GB, Kamera 48MP</p><p>Rp 3.999.000</p></div>
+            <div class="card"><img src="img/samsung galxy a16 5g.webp" alt="Samsung Galaxy A16 5G"><p>Samsung Galaxy A16 5G</p><p>RAM 8GB, ROM 128GB, Kamera 50MP</p><p>Rp 4.299.000</p></div>
+            <div class="card"><img src="img/samsung galxy s25.webp" alt="Samsung Galaxy S25"><p>Samsung Galaxy S25</p><p>RAM 12GB, ROM 512GB, Kamera 200MP</p><p>Rp 18.999.000</p></div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        © 2025 Teco Cell. All rights reserved.
+    </div>
+</body>
+</html>

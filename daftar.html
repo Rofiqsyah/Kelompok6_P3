@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Teco Cell</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Register - TECO CELL</title>
+    <link rel="stylesheet" href="gaya.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -15,13 +15,13 @@
             height: 100vh;
             margin: 0;
         }
-        .login-container {
+        .container {
             background: white;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 350px;
             text-align: center;
-            width: 300px;
         }
         .logo {
             width: 100px;
@@ -38,30 +38,29 @@
         }
         input {
             width: 100%;
-            padding: 8px;
+            padding: 10px;
             margin-top: 5px;
             border: 1px solid #ccc;
             border-radius: 5px;
         }
-        button {
-            background-color: #A1E3F9;
-            color: black;
+        .btn {
+            background-color: #0288D1;
+            color: white;
             border: none;
             padding: 10px;
             width: 100%;
-            margin-top: 15px;
             border-radius: 5px;
             cursor: pointer;
-            font-weight: bold;
+            margin-top: 15px;
         }
-        button:hover {
-            background-color: #8AC6E3;
+        .btn:hover {
+            background-color: #026ba1;
         }
         p {
             margin-top: 10px;
         }
         a {
-            color: #007BFF;
+            color: #0288D1;
             text-decoration: none;
         }
         a:hover {
@@ -70,36 +69,25 @@
     </style>
 </head>
 <body>
-    <div class="login-container">
+    <div class="container">
         <img src="img/logo.PNG.png" alt="TECO CELL" class="logo">
-        <h2>Login</h2>
-        <form id="loginForm">
+        <h2>Buat Akun Baru</h2>
+        <form action="#" method="POST">
+            <label for="nama">Nama Lengkap</label>
+            <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap" required>
+
             <label for="email">Email</label>
-            <input type="email" id="email" placeholder="Masukkan email" required>
+            <input type="email" id="email" name="email" placeholder="Masukkan email" required>
+
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Masukkan username" required>
 
             <label for="password">Password</label>
-            <input type="password" id="password" placeholder="Masukkan password" required>
+            <input type="password" id="password" name="password" placeholder="Masukkan password" required>
 
-            <button type="submit">Login</button>
+            <button type="submit" class="btn">Daftar</button>
         </form>
-        <p>Belum punya akun? <a href="daftar.html">Daftar</a></p>
+        <p>Sudah punya akun? <a href="login.html">Login di sini</a></p>
     </div>
-    <script>
-        document.getElementById('loginForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Mencegah form reload
-    
-            let email = document.getElementById('email').value;
-            let password = document.getElementById('password').value;
-    
-            // Contoh kredensial (bisa diganti dengan validasi server)
-            if (email === "admin@tecocell.com" && password === "123456") {
-                localStorage.setItem("user", email);
-                window.location.href = "MenuUtama.html"; // Redirect ke dashboard
-            } else {
-                alert("Email atau Password salah!");
-            }
-        });
-    </script>
-    
 </body>
 </html>
