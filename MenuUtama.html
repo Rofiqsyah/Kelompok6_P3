@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Teco Cell</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #3674B5;
+            display: flex;
+            color: black;
+        }
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            background-color: #3674B5;
+            color: white;
+            padding: 20px;
+            position: fixed;
+            text-align: center;
+        }
+        .logo {
+            width: 100%;
+            max-width: 150px;
+            margin: 0 auto 20px;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            padding: 15px;
+            margin: 10px 0;
+            background: rgba(255, 255, 255, 0.2);
+            text-align: center;
+            border-radius: 5px;
+        }
+        .sidebar ul li a {
+            color: white;
+            text-decoration: none;
+            display: block;
+        }
+        .sidebar ul li:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+        .container {
+            margin-left: 270px;
+            padding: 20px;
+            width: 80%;
+        }
+        .box {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .box h1 {
+            color: #3674B5;
+        }
+        .info {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            align-items: center;
+        }
+        .card img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .text-box {
+            width: 50%;
+            padding: 20px;
+            background: #D1F8EF;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: #3674B5;
+        }
+        .promo {
+            margin-top: 30px;
+            padding: 20px;
+            background: #D1F8EF;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .promo h4 {
+            color: #3674B5;
+        }
+        .promo ul {
+            list-style: none;
+            padding: 0;
+        }
+        .promo ul li {
+            padding: 10px;
+            background: #3674B5;
+            color: white;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+        .address {
+            margin-top: 20px;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .footer {
+            text-align: center;
+            padding: 10px;
+            background: #3674B5;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <img src="img/logo.PNG.png" alt="Logo Teco Cell" class="logo">
+        <ul>
+            <li><a href="katalog.html">Katalog Produk</a></li>
+            <li><a href="transaksi.html">Transaksi</a></li>
+            <li><a href="pelanggan.html">Pelanggan</a></li> <!-- Tambahan menu pelanggan -->
+            <li><a href="penjualan.html">Penjualan</a></li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <div class="box">
+            <h1>Selamat datang di Teco Cell</h1>
+            <div class="info">
+                <div class="card">
+                    <img src="img/logo.PNG.png" alt="Promo Special">
+                </div>
+                <div class="text-box">Belanja mudah dengan berbagai promo serta hemat biaya hanya di Teco Cell saja</div>
+            </div>
+        </div>
+        
+        <div class="promo">
+            <h4>Promo Spesial</h4>
+            <ul>
+                <li>Paket Internet 10GB - Rp 50.000</li>
+                <li>Dapatkan diskon menarik dengan berbagai merk handphone</li>
+                <li>Dapatkan harga spesial di setiap pembelian</li>
+            </ul>
+        </div>
+
+        <div class="address">
+            <h4>Alamat Toko</h4>
+            <p>Jalan Raya Dalopo No. 147 Krajan, Kabupaten Madiun, Jawa Timur 63174</p>
+        </div>
+
+        <div class="footer">
+            <p>© 2025 TECO CELL</p>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (!localStorage.getItem("user")) {
+                window.location.href = "login.html"; // Redirect ke login jika belum login
+            }
+        });
+    
+        function logout() {
+            localStorage.removeItem("user");
+            window.location.href = "login.html"; // Redirect kembali ke login setelah logout
+        }
+    </script>
+    
+    <button onclick="logout()" style="margin-top:20px; padding:10px; background:red; color:white; border:none; cursor:pointer;">
+        Logout
+    </button>
+    
+</body>
+</html>

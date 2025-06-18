@@ -1,0 +1,199 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Teco Cell</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #A1E3F9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+        .logo {
+            width: 100px;
+            margin-bottom: 10px;
+        }
+        h2 {
+            color: #333;
+        }
+        label {
+            display: block;
+            text-align: left;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #A1E3F9;
+            color: black;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            margin-top: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #8AC6E3;
+        }
+        p {
+            margin-top: 10px;
+        }
+        a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <img src="img/logo.PNG.png" alt="TECO CELL" class="logo">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Masukkan email" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Masukkan password" required>
+
+            <button type="submit">Login</button>
+        </form>
+        <p>Belum punya akun? <a href="daftar.html">Daftar</a></p>
+    </div>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Mencegah form reload
+    
+            let email = document.getElementById('email').value;
+            let password = document.getElementById('password').value;
+    
+            // Contoh kredensial (bisa diganti dengan validasi server)
+            if (email === "admin@tecocell.com" && password === "123456") {
+                localStorage.setItem("user", email);
+                window.location.href = "MenuUtama.html"; // Redirect ke dashboard
+            } else {
+                alert("Email atau Password salah!");
+            }
+        });
+    </script>
+    
+</body>
+</html>
+=======
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login - Teco Cell</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #002244, #003366);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .login-container {
+      background-color: white;
+      padding: 30px;
+      border-radius: 15px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+    .login-container img { width: 60px; margin-bottom: 15px; }
+    h2 { margin-bottom: 20px; color: #003366; }
+    label {
+      display: block;
+      text-align: left;
+      margin: 10px 0 5px;
+      font-weight: 600;
+      color: #333;
+    }
+    input[type="text"], input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+    button {
+      background-color: #003366;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 8px;
+      width: 100%;
+      font-size: 16px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    button:hover { background-color: #001f4d; }
+    .link {
+      margin-top: 10px;
+      font-size: 14px;
+    }
+    .link a {
+      color: #003366;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .link a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <img src="img/logo.PNG.png" alt="Logo Teco Cell">
+    <h2>Login</h2>
+    <form action="proses_login.php" method="POST">
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" required placeholder="Masukkan username" />
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required placeholder="Masukkan password" />
+
+      <button type="submit">Login</button>
+    </form>
+    <div class="link">
+      <a href="lupa_password.php">Lupa password?</a>
+    </div>
+    <div class="link">
+      Belum punya akun? <a href="daftar.html">Daftar</a>
+    </div>
+  </div>
+</body>
+</html>
+>>>>>>> 84a23b7 (Upload awal)

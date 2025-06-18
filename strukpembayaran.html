@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Struk Pembayaran - Teco Cell</title>
+  <style>
+    body {
+      font-family: monospace;
+      max-width: 300px;
+      margin: auto;
+      padding: 10px;
+      background-color: #fff;
+      color: #000;
+    }
+
+    .struk {
+      border: 1px dashed #000;
+      padding: 10px;
+    }
+
+    h2, h3, p {
+      text-align: center;
+      margin: 5px 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    th, td {
+      padding: 4px;
+      text-align: left;
+    }
+
+    .total {
+      font-weight: bold;
+      border-top: 1px dashed #000;
+      margin-top: 10px;
+    }
+
+    .footer {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 12px;
+    }
+
+    @media print {
+      body {
+        width: 100%;
+      }
+    }
+
+    .btn-print {
+      display: block;
+      width: 100%;
+      margin: 10px 0;
+      padding: 10px;
+      background-color: #5C4E4E;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .btn-print:hover {
+      background-color: #403636;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="struk">
+    <h2>Teco Cell</h2>
+    <p>Jl. Raya Dalopo No.147<br>Madiun, Jawa Timur</p>
+    <hr>
+    <p>No. Transaksi: <strong>TRX001</strong><br>
+    Tanggal: <strong>2025-05-07</strong><br>
+    Pelanggan: <strong>Andi</strong></p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Qty</th>
+          <th>Harga</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Pulsa Telkomsel</td>
+          <td>1</td>
+          <td>20.000</td>
+          <td>20.000</td>
+        </tr>
+        <tr>
+          <td>Paket Internet</td>
+          <td>1</td>
+          <td>50.000</td>
+          <td>50.000</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p class="total">Total Bayar: Rp 70.000</p>
+    <p class="total">Tunai: Rp 100.000</p>
+    <p class="total">Kembali: Rp 30.000</p>
+
+    <div class="footer">
+      <p>Terima kasih atas kunjungan Anda!</p>
+      <p>~ Teco Cell ~</p>
+    </div>
+  </div>
+
+  <button class="btn-print" onclick="window.print()">Cetak Struk</button>
+
+</body>
+</html>

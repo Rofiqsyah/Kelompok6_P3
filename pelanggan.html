@@ -1,0 +1,344 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Pelanggan</title>
+    <style>
+        body {
+            background-color: #3674B5;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            background-color: #3674B5;
+            padding: 15px;
+            color: white;
+            margin: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            color: black;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            background-color: white;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #3674B5;
+            text-align: left;
+        }
+        th {
+            background-color: #3674B5;
+            color: white;
+        }
+        .form-container {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #3674B5;
+            border-radius: 5px;
+            color: white;
+        }
+        input, button {
+            padding: 10px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        input {
+            width: calc(25% - 15px);
+        }
+        button {
+            background-color: #3674B5;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #3674B5;
+        }
+    </style>
+</head>
+<body>
+    <h1>Daftar Pelanggan</h1>
+    <div class="container">
+        <div class="form-container">
+            <input type="text" id="nama" placeholder="Nama Pelanggan">
+            <input type="email" id="email" placeholder="Email">
+            <input type="tel" id="telepon" placeholder="No. Telepon">
+            <button onclick="tambahPelanggan()">Tambah Pelanggan</button>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Nama</th>
+                    <th>Email</th>
+                    <th>No. Telepon</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody id="tabel-pelanggan"></tbody>
+        </table>
+    </div>
+
+    <script>
+        let pelanggan = [];
+
+        function renderTabel() {
+            let tabel = document.getElementById("tabel-pelanggan");
+            tabel.innerHTML = "";
+            pelanggan.forEach((p, index) => {
+                let row = tabel.insertRow();
+                row.innerHTML = `
+                    <td>${index + 1}</td>
+                    <td>${p.nama}</td>
+                    <td>${p.email}</td>
+                    <td>${p.telepon}</td>
+                    <td>
+                        <button onclick="editPelanggan(${index})">Edit</button>
+                        <button onclick="hapusPelanggan(${index})">Hapus</button>
+                    </td>
+                `;
+            });
+        }
+
+        function tambahPelanggan() {
+            let nama = document.getElementById("nama").value;
+            let email = document.getElementById("email").value;
+            let telepon = document.getElementById("telepon").value;
+
+            if (nama === "" || email === "" || telepon === "") {
+                alert("Harap isi semua data pelanggan!");
+                return;
+            }
+
+            pelanggan.push({ nama, email, telepon });
+            renderTabel();
+
+            document.getElementById("nama").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("telepon").value = "";
+        }
+
+        function editPelanggan(index) {
+            let p = pelanggan[index];
+            let namaBaru = prompt("Edit Nama:", p.nama);
+            let emailBaru = prompt("Edit Email:", p.email);
+            let teleponBaru = prompt("Edit Telepon:", p.telepon);
+
+            if (namaBaru && emailBaru && teleponBaru) {
+                pelanggan[index] = { nama: namaBaru, email: emailBaru, telepon: teleponBaru };
+                renderTabel();
+            }
+        }
+
+        function hapusPelanggan(index) {
+            if (confirm("Apakah Anda yakin ingin menghapus pelanggan ini?")) {
+                pelanggan.splice(index, 1);
+                renderTabel();
+            }
+        }
+    </script>
+</body>
+</html>
+=======
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Daftar Pelanggan</title>
+  <style>
+    body {
+      background-color: #f5faff; /* latar biru muda */
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      text-align: center;
+      background-color: #002b64; /* biru tua */
+      color: white;
+      padding: 15px;
+      margin: 0;
+    }
+
+    .container {
+      width: 85%;
+      margin: 30px auto;
+      background-color: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      background-color: #003366;
+      padding: 15px;
+      border-radius: 8px;
+      color: white;
+      margin-bottom: 20px;
+    }
+
+    input {
+      flex: 1;
+      min-width: 200px;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 15px;
+    }
+
+    button {
+      background-color: #0056b3; /* biru tombol */
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 15px;
+    }
+
+    button:hover {
+      background-color: #007bff;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    th, td {
+      padding: 10px;
+      border: 1px solid #003366;
+      text-align: left;
+    }
+
+    th {
+      background-color: #007bff;
+      color: white;
+    }
+
+    td button {
+      margin-right: 5px;
+      background-color: #0056b3;
+      color: white;
+    }
+
+    td button:hover {
+      background-color: #3399ff;
+    }
+
+    .hapus {
+      background-color: #ff4d4d;
+    }
+
+    .hapus:hover {
+      background-color: #ff9999;
+    }
+  </style>
+</head>
+<body>
+  <h1>Daftar Pelanggan</h1>
+  <div class="container">
+    <div class="form-container">
+      <input type="text" id="nama" placeholder="Nama Pelanggan" />
+      <input type="email" id="email" placeholder="Email" />
+      <input type="tel" id="telepon" placeholder="No. Telepon" />
+      <button onclick="tambahPelanggan()">Tambah Pelanggan</button>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Nama</th>
+          <th>Email</th>
+          <th>No. Telepon</th>
+          <th>Aksi</th>
+        </tr>
+      </thead>
+      <tbody id="tabel-pelanggan"></tbody>
+    </table>
+  </div>
+
+  <script>
+    let pelanggan = [];
+
+    function renderTabel() {
+      const tabel = document.getElementById("tabel-pelanggan");
+      tabel.innerHTML = "";
+      pelanggan.forEach((p, index) => {
+        const row = tabel.insertRow();
+        row.innerHTML = `
+          <td>${index + 1}</td>
+          <td>${p.nama}</td>
+          <td>${p.email}</td>
+          <td>${p.telepon}</td>
+          <td>
+            <button onclick="editPelanggan(${index})">Edit</button>
+            <button class="hapus" onclick="hapusPelanggan(${index})">Hapus</button>
+          </td>
+        `;
+      });
+    }
+
+    function tambahPelanggan() {
+      const nama = document.getElementById("nama").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const telepon = document.getElementById("telepon").value.trim();
+
+      if (!nama || !email || !telepon) {
+        alert("Harap isi semua data pelanggan!");
+        return;
+      }
+
+      pelanggan.push({ nama, email, telepon });
+      renderTabel();
+
+      document.getElementById("nama").value = "";
+      document.getElementById("email").value = "";
+      document.getElementById("telepon").value = "";
+    }
+
+    function editPelanggan(index) {
+      const p = pelanggan[index];
+      const namaBaru = prompt("Edit Nama:", p.nama);
+      const emailBaru = prompt("Edit Email:", p.email);
+      const teleponBaru = prompt("Edit Telepon:", p.telepon);
+
+      if (namaBaru && emailBaru && teleponBaru) {
+        pelanggan[index] = { nama: namaBaru, email: emailBaru, telepon: teleponBaru };
+        renderTabel();
+      }
+    }
+
+    function hapusPelanggan(index) {
+      if (confirm("Apakah Anda yakin ingin menghapus pelanggan ini?")) {
+        pelanggan.splice(index, 1);
+        renderTabel();
+      }
+    }
+  </script>
+</body>
+</html>
+>>>>>>> 84a23b7 (Upload awal)

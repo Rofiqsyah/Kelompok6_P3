@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Transaksi Pembelian - Teco Cell</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f2f2f2;
+      padding: 20px;
+    }
+
+    .form-box, .struk {
+      background: #fff;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    input, select, button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .btn {
+      background-color: #5C4E4E;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: #403636;
+    }
+
+    .struk pre {
+      font-family: monospace;
+      font-size: 14px;
+    }
+
+    @media print {
+      body * {
+        visibility: hidden;
+      }
+      .struk, .struk * {
+        visibility: visible;
+      }
+      .struk {
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-box">
+    <h2>Transaksi Pembelian</h2>
+    <label for="nama">Nama Pelanggan:</label>
+    <input type="text" id="nama" placeholder="Masukkan nama pelanggan">
+
+    <label for="produk">Pilih Produk:</label>
+    <select id="produk">
+      <option value="Pulsa Telkomsel|20000">Pulsa Telkomsel - Rp 20.000</option>
+      <option value="Pulsa XL|25000">Pulsa XL - Rp 25.000</option>
+      <option value="HP Xiaomi Redmi|1500000">HP Xiaomi Redmi - Rp 1.500.000</option>
+    </select>
+
+    <label for="tunai">Jumlah Tunai (Rp):</label>
+    <input type="number" id="tunai" placeholder="Masukkan jumlah uang tunai">
+
+    <button class="btn" onclick="prosesTransaksi()">Simpan & Cetak Struk</button>
+  </div>
+
+  <div class="struk" id="struk" style="display:none">
+    <h2 style="text-align:center;">TECO CELL</h2>
+    <p style="text-align:center;">Jl. Raya Dalopo No.147, Madiun</p>
+    <hr>
+    <pre id="isi-struk"></pre>
+    <p style="text-align:center;">Terima kasih atas kunjungannya!</p>
+  </div>
+
+  <script>
+    function prosesTransaksi() {
+      const nama = document.getElementById('nama').value;
+      const produkValue = document.getElementById('produk').value;
+      const [produk, hargaStr] = produkValue.split('|');
+      const harga = parseInt(hargaStr);
+      const tunai = parseInt(document.getElementById('tunai').value);
+      const kembali = tunai - harga;
+
+      const tanggal = new Date().toLocaleDateString('id-ID');
+      const jam = new Date().toLocaleTimeString('id-ID');
+
+      const struk = `
+No. Transaksi : ${Math.floor(Math.random() * 1000000)}
+Tanggal       : ${tanggal} ${jam}
+Pelanggan     : ${nama}
+
+Produk        : ${produk}
+Harga         : Rp ${harga.toLocaleString()}
+Tunai         : Rp ${tunai.toLocaleString()}
+Kembali       : Rp ${kembali.toLocaleString()}
+      `;
+
+      document.getElementById('isi-struk').textContent = struk;
+      document.getElementById('struk').style.display = 'block';
+      window.print();
+    }
+  </script>
+
+</body>
+</html>

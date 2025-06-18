@@ -1,0 +1,326 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaksi - Teco Cell</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #3674B5;
+            color: black;
+        }
+        .container {
+            width: 50%;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #3674B5;
+        }
+        label {
+            font-weight: bold;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #999;
+        }
+        button {
+            background-color: #57a8ff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #388eeb;
+        }
+        .cart {
+            margin-top: 20px;
+            padding: 15px;
+            background: #7bbbff;
+            border-radius: 5px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .cart h3 {
+            text-align: center;
+            color: #3674B5;
+        }
+        .cart ul {
+            list-style: none;
+            padding: 0;
+        }
+        .cart ul li {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Transaksi - Teco Cell</h2>
+        <form>
+            <label for="nama">Nama Pembeli:</label>
+            <input type="text" id="nama" name="nama" required>
+            
+            <label for="produk">Produk yang Dibeli:</label>
+            <select id="produk" name="produk" required>
+                <option value="hp">Handphone</option>
+                <option value="pulsa">Pulsa</option>
+                <option value="paket">Paket Data</option>
+                <option value="aksesoris">Aksesoris</option>
+            </select>
+            
+            <label for="jumlah">Jumlah:</label>
+            <input type="number" id="jumlah" name="jumlah" required>
+            
+            <label for="pembayaran">Metode Pembayaran:</label>
+            <select id="pembayaran" name="pembayaran" required>
+                <option value="bca">BCA</option>
+                <option value="bri">BRI</option>
+                <option value="mandiri">QRIS</option>
+                <option value="indomaret">Indomaret</option>
+                <option value="alfamart">Alfamart</option>
+            </select>
+            
+            <label for="pengiriman">Jasa Pengiriman:</label>
+            <select id="pengiriman" name="pengiriman" required>
+                <option value="jne">JNE</option>
+                <option value="jnt">J&T</option>
+                <option value="grab">Grab</option>
+                <option value="gojek">Gojek</option>
+            </select>
+            
+            <button type="submit">Proses Transaksi</button>
+        </form>
+    </div>
+
+    <div class="container cart">
+        <h3>Keranjang Belanja</h3>
+        <ul>
+            <li>Produk 1 - Rp 2.000.000</li>
+            <li>Produk 2 - Rp 500.000</li>
+            <li>Produk 3 - Rp 750.000</li>
+        </ul>
+        <button>Checkout</button>
+    </div>
+</body>
+</html>
+=======
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Transaksi HP</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f0f4f8;
+      padding: 20px;
+      color: #1a1a1a;
+    }
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      border-top: 5px solid #002f66;
+    }
+    h2 {
+      text-align: center;
+      color: #002f66;
+      margin-bottom: 20px;
+    }
+    label {
+      margin-top: 15px;
+      display: block;
+      color: #333;
+      font-weight: 500;
+    }
+    input, select, button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 5px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+    button {
+      background: #004080;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      margin-top: 20px;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background: #002f66;
+    }
+    .notif {
+      margin-top: 15px;
+      padding: 12px;
+      background: #d4edda;
+      color: #256029;
+      border-radius: 8px;
+      text-align: center;
+      font-weight: 500;
+    }
+    .gambar-produk {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .gambar-produk img {
+      width: 200px;
+      border-radius: 12px;
+      border: 2px solid #ccc;
+    }
+    p strong {
+      color: #004080;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Form Pembelian HP</h2>
+
+    <div class="gambar-produk">
+      <img id="gambar" src="" alt="Gambar HP">
+    </div>
+
+    <p><strong>Produk:</strong> <span id="nama-produk"></span></p>
+    <p><strong>Harga:</strong> <span id="harga-produk"></span></p>
+    <p><strong>Detail Produk:</strong><br><span id="detail-produk"></span></p>
+
+    <label for="nama">Nama Pembeli:</label>
+    <input type="text" id="nama" placeholder="Nama lengkap">
+
+    <label for="alamat">Alamat Lengkap:</label>
+    <input type="text" id="alamat" placeholder="Alamat pengiriman">
+
+    <label for="ekspedisi">Jasa Ekspedisi:</label>
+    <select id="ekspedisi">
+      <option value="J&T">J&T</option>
+      <option value="JNE">JNE</option>
+      <option value="SiCepat">SiCepat</option>
+      <option value="AnterAja">AnterAja</option>
+    </select>
+
+    <label for="metode">Metode Pembayaran:</label>
+    <select id="metode">
+      <option value="Transfer Bank">Transfer Bank</option>
+      <option value="QRIS">QRIS</option>
+      <option value="COD">COD</option>
+    </select>
+
+    <button onclick="prosesTransaksi()">Bayar Sekarang</button>
+
+    <div id="notif" class="notif" style="display:none;"></div>
+  </div>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const produk = decodeURIComponent(urlParams.get("produk") || "Produk Tidak Diketahui");
+    const harga = urlParams.get("harga") || "0";
+
+    const detailProduk = {
+      "Samsung Galaxy A14 5G": "Layar 6.6 inci PLS LCD, Exynos 1330, 6GB RAM, 128GB ROM, Kamera 50MP, Baterai 5000mAh.",
+      "Samsung Galaxy A15": "Layar 6.5 inci Super AMOLED, Helio G99, 8GB RAM, 256GB ROM, Kamera 50MP, 5000mAh.",
+      "Samsung Galaxy A16 5G": "Layar 6.6 inci, Dimensity 6100+, 8GB RAM, 256GB ROM, Kamera 50MP, 5G, Baterai 5000mAh.",
+      "Samsung Galaxy S25": "Layar 6.8 inci AMOLED 120Hz, Snapdragon 8 Gen 4, 12GB RAM, 512GB ROM, Kamera 200MP.",
+      "14 Pro iBox": "iPhone 14 Pro, Layar 6.1 inci, A16 Bionic, 128GB Storage, Kamera 48MP, Face ID.",
+      "Iphone 15 Pro Max": "iPhone 15 Pro Max, Titanium, A17 Pro Chip, 6.7 inci, 256GB, Kamera 48MP.",
+      "Iphone 16 Inter": "iPhone 16 Internasional, 6.7 inci, 256GB ROM, Kamera 48MP, Face ID, iOS terbaru.",
+      "Google Pixel 6": "Layar 6.4 inci AMOLED, Google Tensor, 8GB RAM, 256GB ROM, Kamera 50MP, Android 13."
+    };
+
+    const gambarProduk = {
+      "Samsung Galaxy A14 5G": "img/Samsung galaxy 14 5g.webp",
+      "Samsung Galaxy A15": "img/Samsung galaxy a15.webp",
+      "Samsung Galaxy A16 5G": "img/samsung galxy a16 5g.webp",
+      "Samsung Galaxy S25": "img/samsung galxy s25.webp",
+      "14 Pro iBox": "img/14 ibox.webp",
+      "Iphone 15 Pro Max": "img/ip 15 pro ibox.webp",
+      "Iphone 16 Inter": "img/ip 16 inter.jpg",
+      "Google Pixel 6": "img/google pixel 6.jpg"
+    };
+
+    const detail = detailProduk[produk] || "Detail produk tidak tersedia.";
+    const gambar = gambarProduk[produk] || "img/default.jpg";
+
+    window.onload = () => {
+      document.getElementById("nama-produk").innerText = produk;
+      document.getElementById("harga-produk").innerText = `Rp ${Number(harga).toLocaleString("id-ID")}`;
+      document.getElementById("detail-produk").innerText = detail;
+      document.getElementById("gambar").src = gambar;
+    };
+
+    function prosesTransaksi() {
+      const nama = document.getElementById("nama").value;
+      const alamat = document.getElementById("alamat").value;
+      const metode = document.getElementById("metode").value;
+      const ekspedisi = document.getElementById("ekspedisi").value;
+
+      if (!nama || !alamat || !metode) {
+        alert("Harap lengkapi semua data.");
+        return;
+      }
+
+      const transaksi = {
+        namaBarang: produk,
+        hargaBarang: Number(harga),
+        namaPembeli: nama,
+        alamatPembeli: alamat,
+        ekspedisi: ekspedisi,
+        metodePembayaran: metode,
+        tanggal: new Date().toISOString().slice(0, 19).replace("T", " ")
+      };
+
+      fetch("simpan_transaksi.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(transaksi)
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.status === "sukses") {
+          document.getElementById("notif").style.display = "block";
+          document.getElementById("notif").innerHTML = `
+            Transaksi berhasil!<br>
+            <strong>${transaksi.namaBarang}</strong><br>
+            Rp ${transaksi.hargaBarang.toLocaleString("id-ID")}<br>
+            Dikirim via <strong>${transaksi.ekspedisi}</strong><br>
+            Pembayaran: ${transaksi.metodePembayaran}<br>
+            Tanggal: ${transaksi.tanggal}
+          `;
+          setTimeout(() => {
+            document.getElementById("notif").style.display = "none";
+            window.print();
+          }, 5000);
+        } else {
+          alert("Gagal menyimpan transaksi: " + data.error);
+        }
+      })
+      .catch(error => {
+        alert("Terjadi kesalahan koneksi: " + error);
+      });
+    }
+  </script>
+</body>
+</html>
+>>>>>>> 84a23b7 (Upload awal)
